@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insert Element</title>
+    <script>
+      // let data = [60,40,10,80,90];
+      // let newEl = 50;
+      // let position = 2;
+      // console.log(data)
+      // for(let i=data.length-1; i>=0; i--){
+      //     if(i >= position){
+      //         data[i+1] = data[i]
+      //         if(i == position){
+      //             data[i] = newEl;
+      //         }
+      //     }
+      // }
+      // console.warn(data)
+      function insertEl() {
+        let data = [60, 40, 10, 80, 90];
+        let newEl = document.getElementById('newEl').value;
+        let position = document.getElementById('position').value;
+        console.log(data);
+        for (let i = data.length - 1; i >= 0; i--) {
+          if (i >= position) {
+            data[i + 1] = data[i];
+            if (i == position) {
+              data[i] = newEl;
+            }
+          }
+        }
+        console.log(data);
+      }
+    </script>
+  </head>
+  <body>
+    <input type="text" id="newEl" placeholder="Enter New Value" />
+    <input type="text" id="position" placeholder="Enter Position" />
+    <button onclick="insertEl()">Insert Element</button>
+  </body>
+</html>
